@@ -5,7 +5,6 @@
    body {
    	background-color: #F1F1F1;
     font-family: 'Lato', Helvetica, 'OpenSans', sans-serif;
-
    }
    header {
    	height: 100vh;
@@ -18,7 +17,7 @@
     align-items: center;
     overflow: hidden;
    }
-   video {
+ /*  video {
     position: center;
     min-height: 100vh;
 
@@ -27,16 +26,16 @@
     -ms-filter: blur(2px);
     -o-filter: blur(2px);
     filter:blur(2px);
-   }
+   }*/
    div.inner {
    	height: 100%;
    	width: 100%;
-    /*background-image: url('../img/stefka-ivanova.jpg');*/
+    background-image: url('../img/sleepingtiger.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 1;
+    opacity: 0.4;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -45,7 +44,7 @@
    }
    header div.container {
    	position: absolute;
-   	top: 30%;
+   	top: 40%;
    	left: 0;
    	width: 100%;
    	z-index: 1;
@@ -73,6 +72,9 @@
    p {
     font-size: 16px;
     color: rgba(42,44,68,0.4);
+   }
+   a {
+    text-decoration: none !important;
    }
    /* ==========================================================================
    Navigation Overrides
@@ -132,7 +134,7 @@
 		 margin: 0;
 		}
 		.navbar-default .navbar-nav > li > a {
-		 text-align: right!important;
+		 text-align: center!important;
 		}
 	}
 
@@ -162,32 +164,183 @@
 	}
 
 /* ==========================================================================
-   Portfolio, About CSS
+   Portfolio, Services, About, Team CSS
    ========================================================================== */
+   section {
+    min-height: 100vh;
+    width: 100%;
+   }
    section .row h2.title {
-   	margin-top: 50px;
    	color: #5169B0;
+    margin-top: 30px;
    	font-size: 30px;
+    font-weight: 900;
    	text-transform: uppercase;
    }
    section .row hr {
    	margin-bottom: 20px;
    }
    section img {
-   	max-width: 100%;
-   	height: auto;
-
-	 -webkit-transition: all ease-in-out 200ms;
-	 	-moz-transition: all ease-in-out 200ms;
-	 		 transition: all ease-in-out 200ms;
+    max-width: 100%;
+    height: auto;
    }
-   #portfolio img:hover {
+   #about {
+    padding-bottom: 10%;
+    background-color: #FFFFFF;
+   }
+   #about p.normal {
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10%;
+    text-indent: 50px;
+   }
+   @media (max-width: 767px) {
+    #about p.normal {
+      padding-left: 10%;
+    }
+   }
+   #about img {
+    max-height: 500px;
+    padding: 0 5%;
+    float: right;
+   }
+   #services {
+    background-color: #FFFFFF;
+    padding-bottom: 10%;
+   }
+   #services img {
+    max-width: 300px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+   }
+   #services .row {
+    padding-right: 10%;
+    padding-left: 10%;
+   }
+   #services i {
+    font-size: 40px;
+    margin: 40px;
+    color: #5169B0;
+   }
+   #portfolio a.portfolio-image:hover {
+     -webkit-transition: all ease-in-out 200ms;
+        -moz-transition: all ease-in-out 200ms;
+             transition: all ease-in-out 200ms;
+   }
+   #portfolio a.portfolio-image:hover {
    	opacity: 0.3;
+    cursor: pointer;
    }
- section div.row:first-child {
+   section div.row:first-child {
    	margin: 30px 0px;
    }
    #portfolio .row div {
    	padding-right: 0px;
     padding-left: 0px;
    }
+   #tiles {
+      line-height: 0;
+       -webkit-column-count: 4;
+       -webkit-column-gap: 0px;
+          -moz-column-count: 4;
+          -moz-column-gap: 0px;
+               column-count: 4;
+               column-gap: 0px; 
+      background-color: #2A2C44; 
+    }
+    #tiles img {
+      width: 100%;
+      height: auto;
+    }
+    @media (max-width: 1000px) {
+      #tiles {
+      -moz-column-count: 3;
+        -webkit-column-count: 3;
+          column-count: 3;
+      }
+    }
+    @media (max-width: 800px) {
+      #tiles {
+      -moz-column-count: 2;
+        -webkit-column-count: 2;
+          column-count: 2;
+      }
+    }
+    @media (max-width: 400px) {
+      #tiles {
+      -moz-column-count: 1;
+        -webkit-column-count: 1;
+          column-count: 1;
+      }
+    }
+    #team .team {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    #team h2.name {
+      color: #5169B0;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    #team h3 {
+      margin: 10px 0px;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(42,44,68,0.4);
+    }
+    #team img {
+      max-width: 200px;
+      margin: 0 auto;
+      border: 10px solid #F5F5F5;
+      -webkit-border-radius: 220px;
+      -moz-border-radius: 220px;
+      border-radius: 220px;
+    }
+    #team a i {
+      font-size: 18px;
+      color: #5169B0;
+      margin-right: 3px;
+      margin-left: 3px;
+
+      -webkit-transition: all ease-in-out 200ms;
+         -moz-transition: all ease-in-out 200ms;
+              transition: all ease-in-out 200ms;
+    }
+    #team a i:hover {
+      color: #979daa;
+    }
+   /* ==========================================================================
+   Form and Contact CSS
+   ========================================================================== */
+  #map {
+    height: 200px;
+    width: 100%;
+  }
+  @media (min-width: 769px) {
+      #contact .form {
+       padding: 0 20%;
+      }
+   }
+   @media (max-width: 768px) {
+     #contact .form {
+      padding: 0 10%;
+     }
+   }
+  #contact .form {
+    display: block;
+    max-width: 100%;
+   }
+  #contact {
+    background-color: #FFFFFF;
+  }
+  #contact .row:first-child {
+    margin-bottom: 10px;
+  }
+  #contact p.lead {
+    margin-top: 50px;
+  }
