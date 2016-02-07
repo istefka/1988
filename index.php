@@ -495,7 +495,7 @@
                     else{         
                         $from="From: $firstname $lastname <$email>\r\nReturn-path: $email"; 
                         $subject="Message sent using your contact form"; 
-                        mail("stefka.ivanova.ivanova@gmail.com", $subject, $message, $from); 
+                        mail("stefka.ivanov@gmail.com", $subject, $message, $from); 
                         echo "<h4 class='text-center'>Thank you for contacting us, we will respond withing 24 hours!</h4>"; 
                         } 
                     }   
