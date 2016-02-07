@@ -388,29 +388,31 @@
       float: left;
       margin-right: 20px;
     }
-    #pricing .box-price {
-      height: 500px;
-      width: 300px;
-      margin-right: 20px;
-      margin-left: 20px;
+    @media (min-width: 881px) {
+      #pricing .box-price {
+        height: 500px;
+        width: 300px;
+        margin-right: 20px;
+        margin-left: 20px;
 
-      background-color: rgba(42,44,68,0.02);
-    }
-    #pricing .box-price:first-child {
-      margin-right: 0px !important;
-      margin-top: 30px;
-      height: 440px;
-      width: 250px;
+        background-color: rgba(42,44,68,0.02);
+      }
+      #pricing .box-price:first-child {
+        margin-right: 0px !important;
+        margin-top: 30px;
+        height: 440px;
+        width: 250px;
 
-      background-color: #FFFFFF;
-    }
-    #pricing .box-price:last-child {
-      margin-left: 0px !important;
-      margin-top: 30px;
-      height: 440px;
-      width: 250px;
+        background-color: #FFFFFF;
+      }
+      #pricing .box-price:last-child {
+        margin-left: 0px !important;
+        margin-top: 30px;
+        height: 440px;
+        width: 250px;
 
-      background-color: #FFFFFF;
+        background-color: #FFFFFF;
+      }
     }
     #pricing h4.title {
       font-weight: 700;
@@ -458,6 +460,26 @@
       position: relative;
       top: -3px;
     }
+    @media (max-width: 880px) {
+        #pricing .box-price {
+        height: 100%;
+        width: 100%;
+        margin: 20px auto;
+        background-color: rgba(42,44,68,0.02);
+      }
+      #pricing .box-price:first-child {
+        height: 100%;
+        width: 100%;
+        margin: 20px auto;
+        background-color: #FFFFFF;
+      }
+      #pricing .box-price:last-child {
+        height: 100%;
+        width: 100%;
+        margin: 20px auto;
+        background-color: #FFFFFF;
+      }
+    }
 /* ==========================================================================
   Modal CSS
 ========================================================================== */
@@ -490,6 +512,7 @@
     }
     #modals .modal-header img {
       border: 10px solid #F5F5F5;
+      max-width: 100%;
     }
     #modals .modal-footer {
       padding: 15px;
