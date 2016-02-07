@@ -533,21 +533,25 @@
     #contact p.lead {
       margin-top: 50px;
     }
-    #contact-firstname {
+    #firstname {
       width: 48%;
       float: left;
       margin-right: 4%;
       margin-bottom: 15px;
     }
-    #contact-lastname {
+    #lastname {
       width: 48%;
       float: left;
       margin-right: 0% !important;
       margin-bottom: 15px;
     }
+    #email,
+    #message {
+      width: 100%;
+      margin-bottom: 15px;
+    }
     input[type="text"], 
-    textarea, 
-    textarea.form-control {
+    textarea {
       height: 50px;
       margin: 0;
       padding: 0 20px;
@@ -571,17 +575,13 @@
          -moz-transition: all ease-in-out 200ms;
               transition: all ease-in-out 200ms;
     }
-
-    textarea, 
-    textarea.form-control {
+    textarea {
+      line-height: 20px;
+      min-height: 200px;
       padding-top: 10px;
-      padding-bottom: 10px;
-      line-height: 30px;
     }
-
     input[type="text"]:focus, 
-    textarea:focus, 
-    textarea.form-control:focus {
+    textarea:focus {
       outline: 0;
       background: rgba(42,44,68,0.01);
       border: 2px solid rgba(81,105,176,0.3);
@@ -589,22 +589,19 @@
     }
 
     input[type="text"]:-moz-placeholder,
-    textarea:-moz-placeholder,
-    textarea.form-control:-moz-placeholder {
+    textarea:-moz-placeholder {
       color: #979daa;
       font-size: 16px;
       font-family: 'Lato', Helvetica, 'OpenSans', sans-serif;
     }
     input[type="text"]:-ms-input-placeholder,
-    textarea:-ms-input-placeholder,
-    textarea.form-control:-ms-input-placeholder {
+    textarea:-ms-input-placeholder {
       color: #979daa;
       font-size: 16px;
       font-family: 'Lato', Helvetica, 'OpenSans', sans-serif;
     }
     input[type="text"]::-webkit-input-placeholder,
-    textarea::-webkit-input-placeholder,
-    textarea.form-control::-webkit-input-placeholder {
+    textarea::-webkit-input-placeholder {
       color: #979daa;
       font-size: 16px;
       font-family: 'Lato', Helvetica, 'OpenSans', sans-serif;
@@ -614,6 +611,16 @@
       font-size: 16px;
       color: rgba(42,44,68,0.4);
       font-family: 'Lato', Helvetica, 'OpenSans', sans-serif;
+      display: none;
+    }
+    #contact h4 {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #5169B0;
+      margin-bottom: 10px;
+      margin-top: 0;
+      padding: 15px 10px;
+      font-size: 14px;
     }
 /* ==========================================================================
   Animations CSS

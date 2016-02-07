@@ -463,29 +463,43 @@
               <div class="form-top">
               </div>
               <div class="form-bottom contact-form">
-                <form role="form" action="contact.php" method="post">
-                  <div class="form-group">
-                    <label class="sr-only" for="contact-firstname">First Name</label>
-                    <input type="text" name="firstname" placeholder="First Name" class="contact-name form-control" id="contact-firstname">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="contact-lastname">Last Name</label>
-                    <input type="text" name="lastname" placeholder="Last Name" class="contact-name form-control" id="contact-lastname">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="contact-email">Email</label>
-                    <input type="text" name="email" placeholder="Email" class="contact-email form-control" id="contact-email">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="contact-message">Message</label>
-                    <textarea name="message" placeholder="Message" class="contact-message form-control" id="contact-message"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="contact-antispam">Antispam question: 7 + 3 = ?</label>
-                    <input type="text" name="antispam" placeholder="Your answer" class="contact-antispam form-control" id="contact-antispam">
-                  </div>
-                  <button type="submit" class="cta btn btn-primary">Send message</button>
-                </form>
+                <?php 
+                $action=$_REQUEST['action']; 
+                if ($action=="") /* display the contact form */ 
+                    { 
+                    ?> 
+                    <form  action="" method="POST" enctype="multipart/form-data"> 
+                      <input type="hidden" name="action" value="submit"> 
+                      <label for="firstname">First Name</label>
+                      <input name="firstname" id="firstname" type="text" value="" placeholder="First name" />
+                      <label for="lastname">Last Name</label>
+                      <input name="lastname" id="lastname" type="text" value=""  placeholder="Last name"/>
+                      <label for="email">Email</label>
+                      <input name="email" id="email" type="text" value="" placeholder="Company Email"/>
+                      <label for="message">Message</label>
+                      <textarea name="message" id="message" placeholder="Message"></textarea>
+                      <input class="cta btn btn-primary" type="submit" value="Send message"/> 
+                    </form> 
+                <?php 
+                    }  
+                else /* send the submitted data */ 
+                    { 
+                    $firstname=$_REQUEST['firstname'];
+                    $lastname=$_REQUEST['lastname']; 
+                    $email=$_REQUEST['email']; 
+                    $message=$_REQUEST['message']; 
+                    if (($firstname=="")||($lastname=="")||($email=="")||($message=="")) 
+                        { 
+                        echo "All fields are required, please fill <a href=\"\">the form</a> again."; 
+                        } 
+                    else{         
+                        $from="From: $firstname $lastname <$email>\r\nReturn-path: $email"; 
+                        $subject="Message sent using your contact form"; 
+                        mail("stefka.ivanova.ivanova@gmail.com", $subject, $message, $from); 
+                        echo "<h4 class='text-center'>Thank you for contacting us, we will respond withing 24 hours!</h4>"; 
+                        } 
+                    }   
+                ?>
               </div>
             </div>
           </div>
