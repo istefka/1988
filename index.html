@@ -131,68 +131,90 @@
               <p class="lead">See how we helped our customers</p>
             </div>
           </div>
+          <div class="row text-center wow fadeInLeft">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <a class="cta btn btn-primary filter filter-all clicked">
+                All works
+              </a>
+              <a class="cta btn btn-primary filter filter-web">
+                Website Design
+              </a>
+              <a class="cta btn btn-primary filter filter-banner">
+                Banner Design
+              </a>
+              <a class="cta btn btn-primary filter filter-print">
+                Print Design
+              </a>
+              <a class="cta btn btn-primary filter filter-books">
+                E-books
+              </a>
+              <a class="cta btn btn-primary filter filter-misc">
+                Misc
+              </a>
+            </div>
+          </div>
           <div id="tiles" class="row wow fadeInLeft">
-              <a class="portfolio-image" data-toggle="modal" data-target="#case1">
+              <a class="portfolio-image activated web" data-toggle="modal" data-target="#case1">
                 <div class="logo">Logo 1</div>
                 <img src="img/image1.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case5">
+              <a class="portfolio-image activated banner" data-toggle="modal" data-target="#case5">
                 <div class="logo">Logo 5</div>
                 <img src="img/image2.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case9">
+              <a class="portfolio-image activated banner" data-toggle="modal" data-target="#case9">
                 <div class="logo">Logo 9</div>
                 <img src="img/image3.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case13">
+              <a class="portfolio-image activated web" data-toggle="modal" data-target="#case13">
                 <div class="logo">Logo 13</div>
                 <img src="img/image4.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case2">
+              <a class="portfolio-image activated print" data-toggle="modal" data-target="#case2">
                 <div class="logo">Logo 2</div>
                 <img src="img/image5.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case6">
+              <a class="portfolio-image activated print" data-toggle="modal" data-target="#case6">
                 <div class="logo">Logo 6</div>
                <img src="img/image6.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case10">
+              <a class="portfolio-image activated print" data-toggle="modal" data-target="#case10">
                 <div class="logo">Logo 10</div>
                 <img src="img/image7.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case14">
+              <a class="portfolio-image activated web" data-toggle="modal" data-target="#case14">
                 <div class="logo">Logo 14</div>
                 <img src="img/image8.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case3">
+              <a class="portfolio-image activated banner" data-toggle="modal" data-target="#case3">
                 <div class="logo">Logo 3</div>
                 <img src="img/image9.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case7">
+              <a class="portfolio-image activated book" data-toggle="modal" data-target="#case7">
                 <div class="logo">Logo 7</div>
                <img src="img/image10.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case11">
+              <a class="portfolio-image activated web" data-toggle="modal" data-target="#case11">
                 <div class="logo">Logo 11</div>
                <img src="img/image11.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case15">
+              <a class="portfolio-image activated banner" data-toggle="modal" data-target="#case15">
                 <div class="logo">Logo 15</div>
                 <img src="img/image12.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case4">
+              <a class="portfolio-image activated print" data-toggle="modal" data-target="#case4">
                 <div class="logo">Logo 4</div>
                <img src="img/image13.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case8">
+              <a class="portfolio-image activated book" data-toggle="modal" data-target="#case8">
                 <div class="logo">Logo 8</div>
                 <img src="img/image14.jpg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case12">
+              <a class="portfolio-image activated web" data-toggle="modal" data-target="#case12">
                 <div class="logo">Logo 12</div>
                <img src="img/image15.jpeg"/>
               </a>
-              <a class="portfolio-image" data-toggle="modal" data-target="#case16">
+              <a class="portfolio-image activated print" data-toggle="modal" data-target="#case16">
                 <div class="logo">Logo 16</div>
                 <img src="img/image16.jpeg"/>
               </a>
@@ -827,7 +849,85 @@
             $('ul.nav > li').click(function (e) {
                 $('ul.nav > li').removeClass('active');
                 $(this).addClass('active');                
-            });            
+            }); 
+            $(".filter-all").click(function(){
+                $(".web").addClass('activated');
+                $(".banner").addClass('activated');
+                $(".print").addClass('activated');
+                $(".book").addClass('activated');
+                $(".misc").addClass('activated');
+                $(".filter-all").addClass('clicked');
+                $(".filter-web").removeClass('clicked');
+                $(".filter-banner").removeClass('clicked');
+                $(".filter-print").removeClass('clicked');
+                $(".filter-books").removeClass('clicked');
+                $(".filter-misc").removeClass('clicked');
+            });
+            $(".filter-web").click(function(){
+                $(".web").addClass('activated');
+                $(".banner").removeClass('activated');
+                $(".print").removeClass('activated');
+                $(".book").removeClass('activated');
+                $(".misc").removeClass('activated');
+                $(".filter-all").removeClass('clicked');
+                $(".filter-web").addClass('clicked');
+                $(".filter-banner").removeClass('clicked');
+                $(".filter-print").removeClass('clicked');
+                $(".filter-books").removeClass('clicked');
+                $(".filter-misc").removeClass('clicked');
+            });
+            $(".filter-banner").click(function(){
+                $(".web").removeClass('activated');
+                $(".banner").addClass('activated');
+                $(".print").removeClass('activated');
+                $(".book").removeClass('activated');
+                $(".misc").removeClass('activated');
+                $(".filter-all").removeClass('clicked');
+                $(".filter-web").removeClass('clicked');
+                $(".filter-banner").addClass('clicked');
+                $(".filter-print").removeClass('clicked');
+                $(".filter-books").removeClass('clicked');
+                $(".filter-misc").removeClass('clicked');
+            });
+            $(".filter-print").click(function(){
+                $(".web").removeClass('activated');
+                $(".banner").removeClass('activated');
+                $(".print").addClass('activated');
+                $(".book").removeClass('activated');
+                $(".misc").removeClass('activated');
+                $(".filter-all").removeClass('clicked');
+                $(".filter-web").removeClass('clicked');
+                $(".filter-banner").removeClass('clicked');
+                $(".filter-print").addClass('clicked');
+                $(".filter-books").removeClass('clicked');
+                $(".filter-misc").removeClass('clicked');
+            });
+            $(".filter-books").click(function(){
+                $(".web").removeClass('activated');
+                $(".banner").removeClass('activated');
+                $(".print").removeClass('activated');
+                $(".book").addClass('activated');
+                $(".misc").removeClass('activated');
+                $(".filter-all").removeClass('clicked');
+                $(".filter-web").removeClass('clicked');
+                $(".filter-banner").removeClass('clicked');
+                $(".filter-print").removeClass('clicked');
+                $(".filter-books").addClass('clicked');
+                $(".filter-misc").removeClass('clicked');
+            });    
+            $(".filter-misc").click(function(){
+                $(".web").removeClass('activated');
+                $(".banner").removeClass('activated');
+                $(".print").removeClass('activated');
+                $(".book").removeClass('activated');
+                $(".misc").addClass('activated');
+                $(".filter-all").removeClass('clicked');
+                $(".filter-web").removeClass('clicked');
+                $(".filter-banner").removeClass('clicked');
+                $(".filter-print").removeClass('clicked');
+                $(".filter-books").removeClass('clicked');
+                $(".filter-misc").addClass('clicked');
+            });         
         });
       </script>
       <script>
@@ -843,7 +943,7 @@
             
           }
         google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+      </script>
   </footer>
   </body>
 </html>
